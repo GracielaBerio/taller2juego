@@ -1,7 +1,10 @@
 package com.mycompany.taller2juego;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class MainWindow extends JFrame {
 
@@ -11,6 +14,9 @@ public class MainWindow extends JFrame {
         setSize(800, 600); // Ancho x Alto
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+
+        // Reproducir el sonido de inicio
+        playSound("src/main/resources/inicio.wav");
 
         // Crear un JLabel para el título
         JLabel titleLabel = new JLabel("Carmen Sandiego: Aventura en Uruguay", SwingConstants.CENTER);
@@ -23,7 +29,7 @@ public class MainWindow extends JFrame {
 
         // Crear un panel para la imagen
         JLabel imageLabel = new JLabel();
-        ImageIcon icon = new ImageIcon("imagenes/imagen2.png"); 
+        ImageIcon icon = new ImageIcon("imagenes/imagen2.png");
         imageLabel.setIcon(icon);
         imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         JPanel imagePanel = new JPanel(new BorderLayout());
@@ -61,6 +67,18 @@ public class MainWindow extends JFrame {
 
         // Hacer visible la ventana
         setVisible(true);
+    }
+
+    private void playSound(String soundFilePath) {
+        try {
+            File soundFile = new File(soundFilePath);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
