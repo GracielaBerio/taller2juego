@@ -51,7 +51,12 @@ public class MainWindow extends JFrame {
             HelpWindow helpWindow = new HelpWindow();
             helpWindow.setVisible(true);
         });
-
+        
+        // Añadir listener para el botón de ayuda
+        boton1.addActionListener(e -> {
+            Interfaz interfaz = new Interfaz();
+            interfaz.setVisible(true);
+        });
         // Crear un panel para los botones
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
