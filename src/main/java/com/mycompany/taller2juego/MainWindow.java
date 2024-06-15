@@ -40,6 +40,12 @@ public class MainWindow extends JFrame {
         boton2.setPreferredSize(buttonSize);
         boton3.setPreferredSize(buttonSize);
 
+        // Añadir listener para el botón de ayuda
+        boton2.addActionListener(e -> {
+            HelpWindow helpWindow = new HelpWindow();
+            helpWindow.setVisible(true);
+        });
+
         // Crear un panel para los botones
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
