@@ -68,7 +68,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
 
         viajarCiudades.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        viajarCiudades.setText("Viaje");
+        viajarCiudades.setIcon(new javax.swing.ImageIcon("C:\\Users\\grabe\\OneDrive\\Documentos\\GitHub\\taller2juego\\imagenes\\Botones\\Avion.png")); // NOI18N
         viajarCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viajarCiudadesActionPerformed(evt);
@@ -76,7 +76,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         listaCiudadesProx.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        listaCiudadesProx.setText("Ver");
+        listaCiudadesProx.setIcon(new javax.swing.ImageIcon("C:\\Users\\grabe\\OneDrive\\Documentos\\GitHub\\taller2juego\\imagenes\\Botones\\Ciudades.jpg")); // NOI18N
         listaCiudadesProx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaCiudadesProxActionPerformed(evt);
@@ -84,10 +84,10 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         buscarLugar.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        buscarLugar.setText("Lupa");
+        buscarLugar.setIcon(new javax.swing.ImageIcon("C:\\Users\\grabe\\OneDrive\\Documentos\\GitHub\\taller2juego\\imagenes\\Botones\\BuscarCiudades.jpg")); // NOI18N
 
         acusarCriminal.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        acusarCriminal.setText("Crimen");
+        acusarCriminal.setIcon(new javax.swing.ImageIcon("C:\\Users\\grabe\\OneDrive\\Documentos\\GitHub\\taller2juego\\imagenes\\Botones\\Criminal.jpg")); // NOI18N
 
         javax.swing.GroupLayout panelAccionesLayout = new javax.swing.GroupLayout(panelAcciones);
         panelAcciones.setLayout(panelAccionesLayout);
@@ -114,10 +114,10 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(pistaLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(listaCiudadesProx, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(viajarCiudades, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(buscarLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(acusarCriminal, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
+                    .addComponent(listaCiudadesProx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viajarCiudades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buscarLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(acusarCriminal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 

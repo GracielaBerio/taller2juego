@@ -170,10 +170,10 @@
                       <Component id="pistaLugar" min="-2" pref="214" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="listaCiudadesProx" alignment="2" pref="45" max="32767" attributes="0"/>
-                          <Component id="viajarCiudades" alignment="2" pref="45" max="32767" attributes="0"/>
-                          <Component id="buscarLugar" alignment="2" pref="45" max="32767" attributes="0"/>
-                          <Component id="acusarCriminal" alignment="2" pref="45" max="32767" attributes="0"/>
+                          <Component id="listaCiudadesProx" alignment="2" max="32767" attributes="0"/>
+                          <Component id="viajarCiudades" alignment="2" max="32767" attributes="0"/>
+                          <Component id="buscarLugar" alignment="2" max="32767" attributes="0"/>
+                          <Component id="acusarCriminal" alignment="2" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -188,7 +188,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="8" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Viaje"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\grabe\OneDrive\Documentos\GitHub\taller2juego\imagenes\Botones\Avion.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viajarCiudadesActionPerformed"/>
@@ -199,7 +201,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="8" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Ver"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\grabe\OneDrive\Documentos\GitHub\taller2juego\imagenes\Botones\Ciudades.jpg"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listaCiudadesProxActionPerformed"/>
@@ -210,7 +214,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="8" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Lupa"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\grabe\OneDrive\Documentos\GitHub\taller2juego\imagenes\Botones\BuscarCiudades.jpg"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="acusarCriminal">
@@ -218,7 +224,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="8" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Crimen"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\grabe\OneDrive\Documentos\GitHub\taller2juego\imagenes\Botones\Criminal.jpg"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
