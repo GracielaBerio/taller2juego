@@ -27,21 +27,169 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelPrincipal = new javax.swing.JPanel();
+        panelCiudad = new javax.swing.JPanel();
+        ciudadActual = new javax.swing.JLabel();
+        imagenCiudad = new javax.swing.JLabel();
+        panelAcciones = new javax.swing.JPanel();
+        pistaLugar = new javax.swing.JLabel();
+        viajarCiudades = new javax.swing.JButton();
+        listaCiudadesProx = new javax.swing.JButton();
+        buscarLugar = new javax.swing.JButton();
+        acusarCriminal = new javax.swing.JButton();
+        barraNavegacion = new javax.swing.JMenuBar();
+        barraJuego = new javax.swing.JMenu();
+        creditosJuego = new javax.swing.JMenuItem();
+        juegoNuevo = new javax.swing.JMenuItem();
+        salirJuego = new javax.swing.JMenuItem();
+        barraOpciones = new javax.swing.JMenu();
+        sonidoActivacion = new javax.swing.JCheckBoxMenuItem();
+        barraCriminales = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout panelCiudadLayout = new javax.swing.GroupLayout(panelCiudad);
+        panelCiudad.setLayout(panelCiudadLayout);
+        panelCiudadLayout.setHorizontalGroup(
+            panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCiudadLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ciudadActual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imagenCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))
+        );
+        panelCiudadLayout.setVerticalGroup(
+            panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCiudadLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ciudadActual, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(imagenCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        viajarCiudades.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        viajarCiudades.setText("Viaje");
+        viajarCiudades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viajarCiudadesActionPerformed(evt);
+            }
+        });
+
+        listaCiudadesProx.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        listaCiudadesProx.setText("Ver");
+        listaCiudadesProx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaCiudadesProxActionPerformed(evt);
+            }
+        });
+
+        buscarLugar.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        buscarLugar.setText("Lupa");
+
+        acusarCriminal.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        acusarCriminal.setText("Crimen");
+
+        javax.swing.GroupLayout panelAccionesLayout = new javax.swing.GroupLayout(panelAcciones);
+        panelAcciones.setLayout(panelAccionesLayout);
+        panelAccionesLayout.setHorizontalGroup(
+            panelAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAccionesLayout.createSequentialGroup()
+                .addGap(3, 3, 3)
+                .addComponent(listaCiudadesProx, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viajarCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buscarLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(acusarCriminal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelAccionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pistaLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelAccionesLayout.setVerticalGroup(
+            panelAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAccionesLayout.createSequentialGroup()
+                .addComponent(pistaLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(listaCiudadesProx, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(viajarCiudades, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(buscarLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(acusarCriminal, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelAcciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelAcciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        barraJuego.setText("Juego");
+
+        creditosJuego.setText("Creditos");
+        barraJuego.add(creditosJuego);
+
+        juegoNuevo.setText("Nuevo Juego");
+        barraJuego.add(juegoNuevo);
+
+        salirJuego.setText("Salir");
+        barraJuego.add(salirJuego);
+
+        barraNavegacion.add(barraJuego);
+
+        barraOpciones.setText("Opciones");
+
+        sonidoActivacion.setSelected(true);
+        sonidoActivacion.setText("Sonido");
+        barraOpciones.add(sonidoActivacion);
+
+        barraNavegacion.add(barraOpciones);
+
+        barraCriminales.setText("Criminales");
+        barraCriminales.setEnabled(false);
+        barraNavegacion.add(barraCriminales);
+
+        setJMenuBar(barraNavegacion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void viajarCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viajarCiudadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viajarCiudadesActionPerformed
+
+    private void listaCiudadesProxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaCiudadesProxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaCiudadesProxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +227,23 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton acusarCriminal;
+    private javax.swing.JMenu barraCriminales;
+    private javax.swing.JMenu barraJuego;
+    private javax.swing.JMenuBar barraNavegacion;
+    private javax.swing.JMenu barraOpciones;
+    private javax.swing.JButton buscarLugar;
+    private javax.swing.JLabel ciudadActual;
+    private javax.swing.JMenuItem creditosJuego;
+    private javax.swing.JLabel imagenCiudad;
+    private javax.swing.JMenuItem juegoNuevo;
+    private javax.swing.JButton listaCiudadesProx;
+    private javax.swing.JPanel panelAcciones;
+    private javax.swing.JPanel panelCiudad;
+    private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JLabel pistaLugar;
+    private javax.swing.JMenuItem salirJuego;
+    private javax.swing.JCheckBoxMenuItem sonidoActivacion;
+    private javax.swing.JButton viajarCiudades;
     // End of variables declaration//GEN-END:variables
 }
