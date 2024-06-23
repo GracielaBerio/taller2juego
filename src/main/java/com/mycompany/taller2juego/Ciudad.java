@@ -18,6 +18,7 @@ public class Ciudad {
     private String descripcion;
     private Image imagen;
     private List<Ciudad> proximidad;
+    private int prueba;
 
     public Ciudad(int idCiudad, String nombre, List<Lugar> lugares, String descripcion, Image imagen, List<Ciudad> proximidad) {
         this.idCiudad = idCiudad;
