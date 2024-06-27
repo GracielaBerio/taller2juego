@@ -100,6 +100,7 @@ public class Ciudad {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+    
 
     /**
      * @return the proximidad
