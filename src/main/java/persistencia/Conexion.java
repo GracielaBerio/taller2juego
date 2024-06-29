@@ -18,8 +18,8 @@ public class Conexion {
         Ciudad c = new Ciudad ();
         c.setIdCiudad(idCiudad);
         c.setImagen("Cv_Montevideo.jpg");
-        c.setDescripcion("Ciudad de Prueba");
-        c.setNombre(" Nombre de cualquier ciudad");
+        c.setDescripcion("Montevideo, descripción de la ciudad...");
+        c.setNombre(" Montevideo");
         
         return c;
     }
