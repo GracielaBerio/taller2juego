@@ -36,11 +36,12 @@ public class Interfaz extends javax.swing.JFrame {
         ciudadActual = new javax.swing.JLabel();
         imagenCiudad = new javax.swing.JLabel();
         panelAcciones = new javax.swing.JPanel();
-        pistaLugar = new javax.swing.JLabel();
         viajarCiudades = new javax.swing.JButton();
         listaCiudadesProx = new javax.swing.JButton();
         buscarLugar = new javax.swing.JButton();
         acusarCriminal = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        descripciones = new javax.swing.JTextArea();
         barraNavegacion = new javax.swing.JMenuBar();
         barraJuego = new javax.swing.JMenu();
         creditosJuego = new javax.swing.JMenuItem();
@@ -59,9 +60,9 @@ public class Interfaz extends javax.swing.JFrame {
             panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCiudadLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ciudadActual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(imagenCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))
+                .addGroup(panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ciudadActual, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imagenCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         panelCiudadLayout.setVerticalGroup(
             panelCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,6 +95,16 @@ public class Interfaz extends javax.swing.JFrame {
         acusarCriminal.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         acusarCriminal.setIcon(new javax.swing.ImageIcon("C:\\Users\\grabe\\OneDrive\\Documentos\\GitHub\\taller2juego\\imagenes\\Botones\\Criminal.jpg")); // NOI18N
 
+        descripciones.setEditable(false);
+        descripciones.setBackground(new java.awt.Color(204, 204, 204));
+        descripciones.setColumns(20);
+        descripciones.setLineWrap(true);
+        descripciones.setRows(5);
+        descripciones.setWrapStyleWord(true);
+        descripciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        descripciones.setFocusable(false);
+        jScrollPane1.setViewportView(descripciones);
+
         javax.swing.GroupLayout panelAccionesLayout = new javax.swing.GroupLayout(panelAcciones);
         panelAcciones.setLayout(panelAccionesLayout);
         panelAccionesLayout.setHorizontalGroup(
@@ -108,16 +119,17 @@ public class Interfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(acusarCriminal, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelAccionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pistaLugar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAccionesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         panelAccionesLayout.setVerticalGroup(
             panelAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAccionesLayout.createSequentialGroup()
-                .addComponent(pistaLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(panelAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(listaCiudadesProx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viajarCiudades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -133,8 +145,8 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelAcciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelAcciones, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         panelPrincipalLayout.setVerticalGroup(
@@ -199,13 +211,15 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void listaCiudadesProxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaCiudadesProxActionPerformed
         // TODO add your handling code here:
+        MostrarMapa m = new MostrarMapa();
+        m.setVisible(true);
     }//GEN-LAST:event_listaCiudadesProxActionPerformed
 
     private void juegoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_juegoNuevoActionPerformed
         Ciudad c = new Ciudad();
         c = new Controlador().seleccionarCiudad(1);
         ciudadActual.setText(c.getNombre());
-        pistaLugar.setText(c.getDescripcion());
+        descripciones.setText(c.getDescripcion());
         ImageIcon icon = new ImageIcon("imagenes/"+ c.getImagen());
         imagenCiudad.setIcon(icon);
         // TODO add your handling code here:
@@ -255,13 +269,14 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton buscarLugar;
     private javax.swing.JLabel ciudadActual;
     private javax.swing.JMenuItem creditosJuego;
+    private javax.swing.JTextArea descripciones;
     private javax.swing.JLabel imagenCiudad;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem juegoNuevo;
     private javax.swing.JButton listaCiudadesProx;
     private javax.swing.JPanel panelAcciones;
     private javax.swing.JPanel panelCiudad;
     private javax.swing.JPanel panelPrincipal;
-    private javax.swing.JLabel pistaLugar;
     private javax.swing.JMenuItem salirJuego;
     private javax.swing.JCheckBoxMenuItem sonidoActivacion;
     private javax.swing.JButton viajarCiudades;

@@ -17,9 +17,9 @@ public class Conexion {
     public Ciudad obtenerCiudad(int idCiudad){
         Ciudad c = new Ciudad ();
         c.setIdCiudad(idCiudad);
-        c.setImagen("Cv_Montevideo.jpg");
-        c.setDescripcion("Ciudad de Prueba");
-        c.setNombre(" Nombre de cualquier ciudad");
+        c.setImagen("CV_Montevideo.jpg");
+        c.setDescripcion("El barrio histórico de Montevideo, con calles adoquinadas y arquitectura colonial...");
+        c.setNombre(" Montevideo...");
         
         return c;
     }
