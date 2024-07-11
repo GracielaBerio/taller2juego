@@ -2,24 +2,50 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package biblioteca;
+package DAO;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
 
 /**
  *
- * @author grabe
+ * @author Joao
  */
-public class Criminal {
+@Entity
+@Table(name = "criminal")
 
+public class CriminalDAO {
+    
+    @Id
+    @Column(name="idCriminal")
     private int idCriminal;
+    
+    @Column(name="nombreCriminal")
     private String nombreCriminal;
-    private String sexo;
-    private String ocupacion;
-    private String colorPelo;
-    private String vehiculo;
+    
+    @Column(name="hobby")
     private String hobby;
+    
+    @Column(name="sexo")
+    private String sexo;
+    
+    @Column(name="colorPelo")
+    private String colorPelo;
+    
+    @Column(name="ocupacion")
+    private String ocupacion;
+    
+    @Column(name="vehiculo")
+    private String vehiculo;
+    
+    @Column(name="caracteristicas")
     private String caracteristica;
 
-    public Criminal(int idCriminal, String nombreCriminal, String sexo, String ocupacion, String colorPelo, String vehiculo, String hobby, String caracteristica) {
+    public CriminalDAO(int idCriminal, String nombreCriminal, String sexo, String ocupacion, String colorPelo, String vehiculo, String hobby, String caracteristica) {
         this.idCriminal = idCriminal;
         this.nombreCriminal = nombreCriminal;
         this.sexo = sexo;
@@ -140,6 +166,19 @@ public class Criminal {
      */
     public void setCaracteristica(String caracteristica) {
         this.caracteristica = caracteristica;
+    }
+
+    @Override
+    public String toString() {
+        return "CriminalDAO{"
+                + ", nombreCriminal='" + nombreCriminal + '\''
+                + ", sexo='" + sexo + '\''
+                + ", ocupacion='" + ocupacion + '\''
+                + ", colorPelo='" + colorPelo + '\''
+                + ", vehiculo='" + vehiculo + '\''
+                + ", hobby='" + hobby + '\''
+                + ", caracteristica='" + caracteristica + '\''
+                + '}';
     }
 
 }

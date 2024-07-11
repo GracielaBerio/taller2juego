@@ -206,7 +206,7 @@ public class Interfaz extends javax.swing.JFrame {
         c = new Controlador().seleccionarCiudad(1);
         ciudadActual.setText(c.getNombre());
         pistaLugar.setText(c.getDescripcion());
-        ImageIcon icon = new ImageIcon("imagenes/"+ c.getImagen());
+        ImageIcon icon = new ImageIcon("imagenes/" + c.getImagen());
         imagenCiudad.setIcon(icon);
         // TODO add your handling code here:
     }//GEN-LAST:event_juegoNuevoActionPerformed
