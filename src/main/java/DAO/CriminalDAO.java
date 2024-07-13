@@ -46,7 +46,7 @@ public class CriminalDAO {
     private String caracteristica;
 
     public CriminalDAO(int idCriminal, String nombreCriminal, String sexo, String ocupacion, String colorPelo, String vehiculo, String hobby, String caracteristica) {
-        this.idCriminal = idCriminal;
+        
         this.nombreCriminal = nombreCriminal;
         this.sexo = sexo;
         this.ocupacion = ocupacion;
