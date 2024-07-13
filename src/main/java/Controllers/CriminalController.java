@@ -1,6 +1,7 @@
 package Controllers;
 
 import DAO.CriminalDAO;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -30,7 +31,7 @@ public class CriminalController {
      *
      * @param idCriminal      ID del criminal
      * @param nombreCriminal  Nombre del criminal
-     * @param hobby           Hobby del criminal
+     * @param hobbie           Hobbie del criminal
      * @param sexo            Sexo del criminal
      * @param colorPelo       Color de pelo del criminal
      * @param ocupacion       Ocupación del criminal
@@ -38,7 +39,7 @@ public class CriminalController {
      * @param caracteristica  Característica distintiva del criminal
      * @return                Mensaje indicando si el criminal fue creado
      */
-    public String crearCriminal(int idCriminal, String nombreCriminal, String hobby, String sexo, String colorPelo, String ocupacion,
+    public String crearCriminal(int idCriminal, String nombreCriminal, String hobbie, String sexo, String colorPelo, String ocupacion,
                                 String vehiculo, String caracteristica) {
 
         // Abrir una nueva sesión de Hibernate
@@ -46,7 +47,7 @@ public class CriminalController {
 
         try {
             // Crear una nueva instancia de CriminalDAO
-            CriminalDAO criminal = new CriminalDAO(idCriminal, nombreCriminal, sexo, ocupacion, colorPelo, vehiculo, hobby, caracteristica);
+            CriminalDAO criminal = new CriminalDAO(idCriminal, nombreCriminal, sexo, ocupacion, colorPelo, vehiculo, hobbie, caracteristica);
 
             // Iniciar una transacción de Hibernate
             session.beginTransaction();
@@ -75,41 +76,24 @@ public class CriminalController {
     }
 
     
-    // Método para buscar un criminal por ID o nombre
-    public String buscarCriminal(String searchValue) {
+ // Método para obtener todos los criminales
+    public String obtenerTodosLosCriminales() {
         Session session = sessionFactory.openSession();
-        CriminalDAO criminal = null;
-
         try {
             session.beginTransaction();
-
-            // Intentar buscar por ID
-            try {
-                int id = Integer.parseInt(searchValue);
-                criminal = session.get(CriminalDAO.class, id);
-            } catch (NumberFormatException e) {
-                // Si no es un número, buscar por nombre
-                String hql = "FROM CriminalDAO WHERE nombreCriminal = :nombre";
-                criminal = session.createQuery(hql, CriminalDAO.class)
-                        .setParameter("nombre", searchValue)
-                        .uniqueResult();
-            }
-
+            List<CriminalDAO> listaCriminales = session.createQuery("FROM CriminalDAO", CriminalDAO.class).list();
             session.getTransaction().commit();
-
-            if (criminal != null) {
-                return criminal.toString();
-            } else {
-                return "Criminal no encontrado";
+            StringBuilder resultado = new StringBuilder();
+            for (CriminalDAO criminal : listaCriminales) {
+                resultado.append(criminal.toString()).append("\n");
             }
-
+            return resultado.toString();
         } catch (Exception e) {
             if (session.getTransaction() != null) {
                 session.getTransaction().rollback();
             }
             e.printStackTrace();
-            return "Error al buscar criminal";
-
+            return "Error al obtener criminales";
         } finally {
             session.close();
         }

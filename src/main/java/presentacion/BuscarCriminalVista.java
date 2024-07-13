@@ -1,19 +1,13 @@
 package presentacion;
 
 import Controllers.CriminalController;
-import DAO.CriminalDAO;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BuscarCriminalVista {
     private JFrame frame;
-    private JTextField campoBusqueda;
-    private JButton botonBuscar;
+    private JButton botonMostrarTodos;
     private JTextArea areaResultado;
 
     public BuscarCriminalVista() {
@@ -23,37 +17,25 @@ public class BuscarCriminalVista {
         frame.setSize(400, 400);
         frame.setLayout(null);
 
-        // Campo de entrada para la búsqueda
-        JLabel etiquetaBusqueda = new JLabel("Buscar por ID o Nombre:");
-        etiquetaBusqueda.setBounds(10, 10, 150, 25);
-        frame.add(etiquetaBusqueda);
-
-        campoBusqueda = new JTextField();
-        campoBusqueda.setBounds(170, 10, 200, 25);
-        frame.add(campoBusqueda);
-
-        // Botón para iniciar la búsqueda
-        botonBuscar = new JButton("Buscar");
-        botonBuscar.setBounds(120, 50, 150, 25);
-        frame.add(botonBuscar);
+        // Botón para mostrar todos los criminales
+        botonMostrarTodos = new JButton("Mostrar Todos");
+        botonMostrarTodos.setBounds(120, 10, 150, 25);
+        frame.add(botonMostrarTodos);
 
         // Área de texto para mostrar los resultados
         areaResultado = new JTextArea();
-        areaResultado.setBounds(10, 90, 360, 250);
+        areaResultado.setBounds(10, 50, 360, 300);
         frame.add(areaResultado);
 
-        // Acción del botón de búsqueda
-        botonBuscar.addActionListener(new ActionListener() {
+        // Acción del botón de mostrar todos
+        botonMostrarTodos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de ControladorCriminal
+                // Crear una instancia de CriminalController
                 CriminalController controller = new CriminalController();
 
-                // Obtener el valor de búsqueda ingresado
-                String valorBusqueda = campoBusqueda.getText();
-
-                // Buscar el criminal por ID o Nombre
-                String resultado = controller.buscarCriminal(valorBusqueda);
+                // Obtener todos los criminales
+                String resultado = controller.obtenerTodosLosCriminales();
 
                 // Mostrar el resultado en el área de texto
                 areaResultado.setText(resultado);

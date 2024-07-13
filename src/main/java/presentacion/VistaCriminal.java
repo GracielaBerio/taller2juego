@@ -10,7 +10,7 @@ public class VistaCriminal {
     private JFrame frame;
     private JTextField campoId;
     private JTextField campoNombre;
-    private JTextField campoHobby;
+    private JTextField campoHobbie;
     private JTextField campoSexo;
     private JTextField campoColorPelo;
     private JTextField campoOcupacion;
@@ -42,13 +42,13 @@ public class VistaCriminal {
         campoNombre.setBounds(120, 40, 200, 25);
         frame.add(campoNombre);
 
-        JLabel etiquetaHobby = new JLabel("Hobby:");
-        etiquetaHobby.setBounds(10, 70, 100, 25);
-        frame.add(etiquetaHobby);
+        JLabel etiquetaHobbie = new JLabel("Hobbie:");
+        etiquetaHobbie.setBounds(10, 70, 100, 25);
+        frame.add(etiquetaHobbie);
 
-        campoHobby = new JTextField();
-        campoHobby.setBounds(120, 70, 200, 25);
-        frame.add(campoHobby);
+        campoHobbie = new JTextField();
+        campoHobbie.setBounds(120, 70, 200, 25);
+        frame.add(campoHobbie);
 
         JLabel etiquetaSexo = new JLabel("Sexo:");
         etiquetaSexo.setBounds(10, 100, 100, 25);
@@ -105,7 +105,7 @@ public class VistaCriminal {
                 // Obtener los datos ingresados
                 int id = Integer.parseInt(campoId.getText());
                 String nombre = campoNombre.getText();
-                String hobby = campoHobby.getText();
+                String hobbie = campoHobbie.getText();
                 String sexo = campoSexo.getText();
                 String colorPelo = campoColorPelo.getText();
                 String ocupacion = campoOcupacion.getText();
@@ -113,7 +113,7 @@ public class VistaCriminal {
                 String caracteristicas = campoCaracteristicas.getText();
 
                 // Llamar al método para crear un criminal
-                String resultado = controller.crearCriminal(id, nombre, hobby, sexo, colorPelo, ocupacion, vehiculo, caracteristicas);
+                String resultado = controller.crearCriminal(id, nombre, hobbie, sexo, colorPelo, ocupacion, vehiculo, caracteristicas);
 
                 // Mostrar el resultado
                 JOptionPane.showMessageDialog(frame, resultado);
