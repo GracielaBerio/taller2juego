@@ -74,6 +74,47 @@ public class CriminalController {
         }
     }
 
+    
+    // Método para buscar un criminal por ID o nombre
+    public String buscarCriminal(String searchValue) {
+        Session session = sessionFactory.openSession();
+        CriminalDAO criminal = null;
+
+        try {
+            session.beginTransaction();
+
+            // Intentar buscar por ID
+            try {
+                int id = Integer.parseInt(searchValue);
+                criminal = session.get(CriminalDAO.class, id);
+            } catch (NumberFormatException e) {
+                // Si no es un número, buscar por nombre
+                String hql = "FROM CriminalDAO WHERE nombreCriminal = :nombre";
+                criminal = session.createQuery(hql, CriminalDAO.class)
+                        .setParameter("nombre", searchValue)
+                        .uniqueResult();
+            }
+
+            session.getTransaction().commit();
+
+            if (criminal != null) {
+                return criminal.toString();
+            } else {
+                return "Criminal no encontrado";
+            }
+
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+            return "Error al buscar criminal";
+
+        } finally {
+            session.close();
+        }
+    }
+
     // Método para cerrar la SessionFactory cuando la aplicación termina
     public static void cerrarSessionFactory() {
         if (sessionFactory != null) {
